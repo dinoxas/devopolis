@@ -28,7 +28,6 @@ router.get('/me', auth, async (req, res) => {
 // @route POST api/profile
 // @desc Create or update user profile
 // @acess Private
-
 router.post(
   '/',
   // Using auth and validator middleware
@@ -103,5 +102,37 @@ router.post(
     }
   }
 );
+
+// @route GET api/profile/
+// @desc GET all profiles
+// @acess Public
+router.get('/', async (req, res) => {
+  try {
+    const profiles = await Profile.find().populate('user', ['name', 'avatar']);
+    res.json(profiles);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+// @route GET api/profile/user/:user_id
+// @desc GET profile by user ID
+// @acess Public
+router.get('/user/:user_id', async (req, res) => {
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id
+    }).populate('user', ['name', 'avatar']);
+
+    if (!profile)
+      return res.status(400).json({ msg: 'There is no profile for this user' });
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
 
 module.exports = router;
