@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://dino123:dino123@devopolis-gped7.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://dino123:dino123@devopolis-gped7.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
