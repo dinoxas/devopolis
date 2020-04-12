@@ -16,7 +16,7 @@ Alert.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  // key can be caalled anything, get state from alert reducer
+  // The key can be called anything, get state from alert reducer
   alerts: state.alert
 });
 
