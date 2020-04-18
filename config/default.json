@@ -1,5 +1,5 @@
 {
   "mongoURI": "mongodb+srv://dino123:dino123@devopolis-gped7.mongodb.net/test?retryWrites=true&w=majority",
   "jwtSecret": "mysecrettoken",
-  "githubToken": "e16d63e31ca16576086e64f4a6898ad1c10f977c"
+  "githubToken": "73ee502cb90076a1f251fecd6fff7ef648f3509d"
 }
