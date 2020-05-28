@@ -2,8 +2,6 @@
 
 Social networking application designed for web developers to share their experience and github repos.
 
-STILL in development.
-
 ## Built With
 
 * [React](https://reactjs.org/) - The JavaScript library used
